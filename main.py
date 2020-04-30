@@ -44,7 +44,7 @@ class App(tk.Tk):
 
 
         self.state = 'standby'
-        self.timer = 300
+        self.timer = 600
         self.row = 0
         self.col = 0
 
@@ -165,8 +165,8 @@ class App(tk.Tk):
         ''' stop the game and time of the counter '''
 
         self.state = 'standby'
-        self.time_label.configure(text='05 : 00')
-        self.timer = 300
+        self.time_label.configure(text='10 : 00')
+        self.timer = 600
         self.start_btn.configure(image=self.p_image)
 
 
@@ -174,7 +174,7 @@ class App(tk.Tk):
 
         ''' Activating all the components of the game to star to play '''
 
-        self.timer = 300
+        self.timer = 600
         self.start_btn.configure(image=self.r_image)
         self.generate_random_given_numbers()
         cell_list[self.row][self.col].configure(bg='grey')
@@ -190,8 +190,8 @@ class App(tk.Tk):
         ''' stop the game and show the solution '''
 
         self.state = 'standby'
-        self.time_label.configure(text='05 : 00')
-        self.timer = 300
+        self.time_label.configure(text='10 : 00')
+        self.timer = 600
         for i in range(9):
             for j in range(9):
                 cell_list[i][j].itemconfigure(cell_list[i][j].text, text=cell_list[i][j].phantom_number)
@@ -220,8 +220,8 @@ class App(tk.Tk):
             self.time_label.configure(text='{} : {}'.format(clock[0], clock[1]))
             if clock[0] == '00' and clock[1] == '00':
                 self.state = 'standby'
-                self.timer = 300
-                self.time_label.configure(text='05 : 00')
+                self.timer = 600
+                self.time_label.configure(text='10 : 00')
                 tk.messagebox.showwarning('Game Over', 'Sorry! Your time is out')
             self.timer -= 1
 
